@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeachLists", "ForeachList
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dates", "DateTime\Dates.csproj", "{93CA1E96-E988-400F-9EC4-5068582C89D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListChallenge", "ListChallenge\ListChallenge.csproj", "{4FEAFCB6-D93F-436F-9625-5D4038DDBCBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{93CA1E96-E988-400F-9EC4-5068582C89D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93CA1E96-E988-400F-9EC4-5068582C89D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93CA1E96-E988-400F-9EC4-5068582C89D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FEAFCB6-D93F-436F-9625-5D4038DDBCBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FEAFCB6-D93F-436F-9625-5D4038DDBCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FEAFCB6-D93F-436F-9625-5D4038DDBCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FEAFCB6-D93F-436F-9625-5D4038DDBCBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -42,7 +42,7 @@ namespace ForeachLists
         private static List<String> StringGent()
         {
             List<String> treu = new List<string>();
-
+            
             treu.Add("John");
             treu.Add("Mary");
             treu.Add("Sue");
