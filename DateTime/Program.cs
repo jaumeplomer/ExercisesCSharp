@@ -21,26 +21,26 @@ namespace Dates
                 dateFormat = "dd/MM/yyyy";
             }
 
-            DateTime userDate = DateTime.ParseExact(userDateString, dateFormat, null);
+            DateTime userDate = DateTime.ParseExact(userDateString, dateFormat, System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat);
 
             TimeSpan desdeUserDate = DateTime.Now.Subtract(userDate);
 
-            if(desdeUserDate.Ticks < 0)
+            if (desdeUserDate.Ticks < 0)
             {
-                Console.WriteLine($" {userDateString} is {desdeUserDate.Days} days in the future");
+                Console.WriteLine($" {userDateString} is {-desdeUserDate.Days} days in the future");
             }
             else
             {
                 Console.WriteLine($"It has been {desdeUserDate.Days} days since {userDateString}");
             }
 
-            //Console.WriteLine("Give me a time please: ");
+            //Console.Write("Give me a time please: ");
             //string userTimeString = Console.ReadLine();
 
             //Console.Write("What time format do you want to use?");
             //string timeFormat = Console.ReadLine();
 
-            //if(timeFormat.Length < 1)
+            //if (timeFormat.Length < 1)
             //{
             //    timeFormat = "h:mm tt";
             //}
@@ -49,7 +49,7 @@ namespace Dates
 
             //TimeSpan desdeUserTime = DateTime.Now.Subtract(userTime);
 
-            //if(desdeUserTime.Ticks < 0)
+            //if (desdeUserTime.Ticks < 0)
             //{
             //    desdeUserTime = desdeUserTime.Add(TimeSpan.FromHours(24));
             //}
