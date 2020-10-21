@@ -20,9 +20,9 @@ namespace Dates
             {
                 dateFormat = "dd/MM/yyyy";
             }
-
-            DateTime userDate = DateTime.ParseExact(userDateString, dateFormat, System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat);
-
+            dateFormat.ToString();
+            DateTime userDate = DateTime.ParseExact(userDateString, dateFormat, null);
+            
             TimeSpan desdeUserDate = DateTime.Now.Subtract(userDate);
 
             if (desdeUserDate.Ticks < 0)
@@ -34,27 +34,27 @@ namespace Dates
                 Console.WriteLine($"It has been {desdeUserDate.Days} days since {userDateString}");
             }
 
-            //Console.Write("Give me a time please: ");
-            //string userTimeString = Console.ReadLine();
+            Console.Write("Give me a time please: ");
+            string userTimeString = Console.ReadLine();
 
-            //Console.Write("What time format do you want to use?");
-            //string timeFormat = Console.ReadLine();
+            Console.Write("What time format do you want to use?");
+            string timeFormat = Console.ReadLine();
 
-            //if (timeFormat.Length < 1)
-            //{
-            //    timeFormat = "h:mm tt";
-            //}
+            if (timeFormat.Length < 1)
+            {
+                timeFormat = "h:mm tt";
+            }
 
-            //DateTime userTime = DateTime.ParseExact(userTimeString, timeFormat, null);
+            DateTime userTime = DateTime.ParseExact(userTimeString, timeFormat, null);
 
-            //TimeSpan desdeUserTime = DateTime.Now.Subtract(userTime);
+            TimeSpan desdeUserTime = DateTime.Now.Subtract(userTime);
 
-            //if (desdeUserTime.Ticks < 0)
-            //{
-            //    desdeUserTime = desdeUserTime.Add(TimeSpan.FromHours(24));
-            //}
+            if (desdeUserTime.Ticks < 0)
+            {
+                desdeUserTime = desdeUserTime.Add(TimeSpan.FromHours(24));
+            }
 
-            //Console.WriteLine($"{userTimeString} was {desdeUserTime.Hours} hours and {desdeUserTime.Minutes} minutes ago.");
+            Console.WriteLine($"{userTimeString} was {desdeUserTime.Hours} hours and {desdeUserTime.Minutes} minutes ago.");
 
             Console.ReadLine();
         }
