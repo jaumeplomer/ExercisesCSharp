@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dates", "DateTime\Dates.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListChallenge", "ListChallenge\ListChallenge.csproj", "{4FEAFCB6-D93F-436F-9625-5D4038DDBCBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFilesChallenge", "TextFilesChallenge\TextFilesChallenge.csproj", "{AD11F755-7420-4DA0-8E2B-5DA2BB007B9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4FEAFCB6-D93F-436F-9625-5D4038DDBCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FEAFCB6-D93F-436F-9625-5D4038DDBCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FEAFCB6-D93F-436F-9625-5D4038DDBCBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD11F755-7420-4DA0-8E2B-5DA2BB007B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD11F755-7420-4DA0-8E2B-5DA2BB007B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD11F755-7420-4DA0-8E2B-5DA2BB007B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD11F755-7420-4DA0-8E2B-5DA2BB007B9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
