@@ -13,6 +13,8 @@ namespace FormTextFilesChallenge
         int lastNameOrder = 0;
         int ageOrder = 0;
         int isAliveOrder = 0;
+        //string file = "StandardDataSet.csv";
+        string file = "AdvancedDataSet.csv";
 
         public ChallengeForm()
         {
@@ -25,7 +27,7 @@ namespace FormTextFilesChallenge
 
         private void LoadListFromFile()
         {
-            string[] lines = File.ReadAllLines("AdvancedDataSet.csv");
+            string[] lines = File.ReadAllLines(file);
 
             string[] headers = lines[0].Split(',');
 
@@ -94,22 +96,72 @@ namespace FormTextFilesChallenge
         private void saveListButton_Click(object sender, EventArgs e)
         {
             List<string> lines = new List<string>();
+            string line = "";
+            //lines.Add("FirstName,LastName,Age,IsAlive");
+            for(int i = 0; i < 4; i++)
+            {
+                if (firstNameOrder == i)
+                {
+                    line += "FirstName";
+                }
+                else if (lastNameOrder == i)
+                {
+                    line += "LastName";
+                }
+                else if (ageOrder == i)
+                {
+                    line += "Age";
+                }
+                else if (isAliveOrder == i)
+                {
+                    line += "IsAlive";
+                }
 
-            lines.Add("FirstNAme,LastName,Age,IsAlive");
+                line += ",";
+            }
+
+            line = line.Substring(0, line.Length - 1);
+
+            lines.Add(line);
 
             foreach(UserModels user in users)
             {
                 int isAliveValue = 0;
-
+                line = "";
+                
                 if(user.IsAlive == true)
                 {
                     isAliveValue = 1;
                 }
 
-                lines.Add($"{ user.FirstName },{ user.LastName },{ user.Age },{ isAliveValue }");
+                for (int i = 0; i < 4; i++)
+                {
+                    if (firstNameOrder == i)
+                    {
+                        line += user.FirstName;
+                    }
+                    else if (lastNameOrder == i)
+                    {
+                        line += user.LastName;
+                    }
+                    else if (ageOrder == i)
+                    {
+                        line += user.Age;
+                    }
+                    else if (isAliveOrder == i)
+                    {
+                        line += isAliveValue;
+                    }
+
+                    line += ",";
+                }
+
+                line = line.Substring(0, line.Length - 1);
+
+                lines.Add(line);
             }
 
-            File.WriteAllLines("AdvancedDataSet.csv",lines);
+            File.WriteAllLines(file,lines);
 
             MessageBox.Show("Save complete!");
         }
