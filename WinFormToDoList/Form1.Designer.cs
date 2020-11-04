@@ -43,8 +43,9 @@
             this.todoListBox.ItemHeight = 29;
             this.todoListBox.Location = new System.Drawing.Point(33, 62);
             this.todoListBox.Name = "todoListBox";
-            this.todoListBox.Size = new System.Drawing.Size(258, 352);
+            this.todoListBox.Size = new System.Drawing.Size(506, 352);
             this.todoListBox.TabIndex = 0;
+            this.todoListBox.DoubleClick += new System.EventHandler(this.todoListBox_DoubleClick);
             // 
             // label1
             // 
@@ -58,7 +59,7 @@
             // todoLabel
             // 
             this.todoLabel.AutoSize = true;
-            this.todoLabel.Location = new System.Drawing.Point(538, 99);
+            this.todoLabel.Location = new System.Drawing.Point(700, 140);
             this.todoLabel.Name = "todoLabel";
             this.todoLabel.Size = new System.Drawing.Size(182, 29);
             this.todoLabel.TabIndex = 2;
@@ -66,34 +67,37 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(543, 186);
+            this.addButton.Location = new System.Drawing.Point(705, 238);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(255, 35);
+            this.addButton.Size = new System.Drawing.Size(255, 57);
             this.addButton.TabIndex = 3;
             this.addButton.Text = "Add ToDo Item";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(297, 186);
+            this.editButton.Location = new System.Drawing.Point(575, 199);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(103, 35);
             this.editButton.TabIndex = 4;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(298, 227);
+            this.deleteButton.Location = new System.Drawing.Point(575, 238);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(102, 35);
+            this.deleteButton.Size = new System.Drawing.Size(103, 35);
             this.deleteButton.TabIndex = 5;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // todoText
             // 
-            this.todoText.Location = new System.Drawing.Point(543, 146);
+            this.todoText.Location = new System.Drawing.Point(705, 186);
             this.todoText.Name = "todoText";
             this.todoText.Size = new System.Drawing.Size(255, 34);
             this.todoText.TabIndex = 6;
@@ -102,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 471);
+            this.ClientSize = new System.Drawing.Size(1077, 471);
             this.Controls.Add(this.todoText);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);

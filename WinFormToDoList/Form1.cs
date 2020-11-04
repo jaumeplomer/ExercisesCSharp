@@ -14,9 +14,15 @@ namespace WinFormToDoList
     {
         BindingList<ToDoItemModel> todoList = new BindingList<ToDoItemModel>();
         ToDoItemModel currentEdit = null;
+
+        //MINUT 39:14 DEL VIEDEO
+
         public toDoMainform()
         {
             InitializeComponent();
+
+            todoListBox.DataSource = todoList;
+            todoListBox.DisplayMember = nameof(ToDoItemModel.TodoDisplay);
         }
 
         private void AddTodo(string todoText)
@@ -63,6 +69,47 @@ namespace WinFormToDoList
         private void CompleteItem(ToDoItemModel todo)
         {
             todo.IsComplete = true;
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            if (currentEdit == null)
+            {
+                AddTodo(todoText.Text);
+            }
+            else
+            {
+                CompleteEdit();
+            }
+
+            todoText.Text = "";
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            if (todoListBox.SelectedItem != null)
+            {
+                ToDoItemModel todo = (ToDoItemModel)todoListBox.SelectedItem;
+                StartEdit(todo);
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (todoListBox.SelectedItem != null)
+            {
+                ToDoItemModel todo = (ToDoItemModel)todoListBox.SelectedItem;
+                Remove(todo);
+            }
+        }
+
+        private void todoListBox_DoubleClick(object sender, EventArgs e)
+        {
+            if (todoListBox.SelectedItem != null)
+            {
+                ToDoItemModel todo = (ToDoItemModel)todoListBox.SelectedItem;
+                CompleteItem(todo);
+            }
         }
     }
 }
