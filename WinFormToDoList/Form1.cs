@@ -15,7 +15,6 @@ namespace WinFormToDoList
         BindingList<ToDoItemModel> todoList = new BindingList<ToDoItemModel>();
         ToDoItemModel currentEdit = null;
 
-        //MINUT 39:14 DEL VIEDEO
 
         public toDoMainform()
         {
@@ -71,6 +70,30 @@ namespace WinFormToDoList
             todo.IsComplete = true;
         }
 
+        private void MoveItemUp(ToDoItemModel todo)
+        {
+            if (todo.PositionNumber == 1)
+            {
+                return;
+            }
+
+            todoList.Remove(todo);
+            todoList.Insert(todo.PositionNumber - 2, todo);
+            Reorder();
+        }
+
+        private void MoveItemDown(ToDoItemModel todo)
+        {
+            if (todo.PositionNumber == todoList.Count)
+            {
+                return;
+            }
+
+            todoList.Remove(todo);
+            todoList.Insert(todo.PositionNumber, todo);
+            Reorder();
+        }
+
         private void addButton_Click(object sender, EventArgs e)
         {
             if (currentEdit == null)
@@ -109,6 +132,45 @@ namespace WinFormToDoList
             {
                 ToDoItemModel todo = (ToDoItemModel)todoListBox.SelectedItem;
                 CompleteItem(todo);
+            }
+        }
+
+        private void todoListBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void todoListBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Down:
+                    e.IsInputKey = true;
+                    break;
+                case Keys.Up:
+                    e.IsInputKey = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void todoListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (todoListBox.SelectedItem != null)
+            {
+                ToDoItemModel todo = (ToDoItemModel)todoListBox.SelectedItem;
+
+                switch (e.KeyCode)
+                {
+                    case Keys.Down:
+                        MoveItemDown(todo);
+                        break;
+                    case Keys.Up:
+                        MoveItemUp(todo);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }

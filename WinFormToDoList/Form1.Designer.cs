@@ -46,6 +46,9 @@
             this.todoListBox.Size = new System.Drawing.Size(506, 352);
             this.todoListBox.TabIndex = 0;
             this.todoListBox.DoubleClick += new System.EventHandler(this.todoListBox_DoubleClick);
+            this.todoListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.todoListBox_KeyDown);
+            this.todoListBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.todoListBox_KeyPress);
+            this.todoListBox.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.todoListBox_PreviewKeyDown);
             // 
             // label1
             // 
@@ -115,7 +118,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.todoListBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "toDoMainform";
             this.Text = "ToDo List";
             this.ResumeLayout(false);

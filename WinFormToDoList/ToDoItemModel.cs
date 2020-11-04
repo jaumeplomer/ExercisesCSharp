@@ -14,9 +14,34 @@ namespace WinFormToDoList
         private string todoText;
         private int positionNumber;
 
-        public int PositionNumber { get => positionNumber; set => positionNumber = value; }
-        public string TodoText { get => todoText; set => todoText = value; }
-        public bool IsComplete { get => isComplete; set => isComplete = value; }
+        public int PositionNumber 
+        { 
+            get => positionNumber;
+            set
+            {
+                positionNumber = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public string TodoText
+        { 
+            get => todoText;
+            set
+            {
+                todoText = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public bool IsComplete
+        {
+            get => isComplete;
+            set
+            {
+                isComplete = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         public string TodoDisplay => $"{ PositionNumber }: { TodoText } (Complete: { IsComplete })";
 
